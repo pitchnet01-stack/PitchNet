@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Startup Investor Connect - Signup</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0B1C2C;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #132C46;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 350px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #1ABC9C;
+    }
+    label {
+      display: block;
+      margin: 0.5rem 0 0.2rem;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    input, select {
+      background: #0B1C2C;
+      color: #fff;
+    }
+    button {
+      background: #1ABC9C;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #16a085;
+    }
+    .message {
+      text-align: center;
+      margin-top: 1rem;
+      color: #1ABC9C;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+      
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+      
+      <label for="role">I am a:</label>
+      <select id="role" required>
+        <option value="">Select Role</option>
+        <option value="startup">Startup Founder</option>
+        <option value="investor">Investor</option>
+      </select>
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter password" required>
+      
+      <button type="submit">Create Account</button>
+    </form>
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById("signupForm");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // stops page reload
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const role = document.getElementById("role").value;
+      const password = document.getElementById("password").value;
+
+      // For now we just "simulate" signup
+      message.textContent = `Welcome, ${name}! You signed up as a ${role}.`;
+      form.reset();
+    });
+  </script>
+</body>
+</html>
