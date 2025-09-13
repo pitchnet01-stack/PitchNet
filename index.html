@@ -1,105 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Startup Investor Connect - Signup</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PitchNet</title>
   <style>
+    /* Global styles */
     body {
-      font-family: 'Poppins', sans-serif;
-      background: #0B1C2C;
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+
+    header {
+      background: #0a2540;
       color: #fff;
+      padding: 1.2rem 2rem;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      height: 100vh;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #00c2a8;
       margin: 0;
     }
-    .container {
-      background: #132C46;
-      padding: 2rem;
-      border-radius: 12px;
-      width: 350px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-      color: #1ABC9C;
-    }
-    label {
-      display: block;
-      margin: 0.5rem 0 0.2rem;
-    }
-    input, select, button {
-      width: 100%;
-      padding: 0.7rem;
-      margin-bottom: 1rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-    input, select {
-      background: #0B1C2C;
+
+    nav a {
       color: #fff;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 500;
     }
-    button {
-      background: #1ABC9C;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
+
+    nav a:hover {
+      color: #00c2a8;
     }
-    button:hover {
-      background: #16a085;
-    }
-    .message {
+
+    .hero {
       text-align: center;
-      margin-top: 1rem;
-      color: #1ABC9C;
+      padding: 4rem 2rem;
+      background: linear-gradient(to right, #0a2540, #102c4c);
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #00c2a8;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background: #00c2a8;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #009f89;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 3rem 2rem;
+      background: #fff;
+    }
+
+    .feature-card {
+      background: #f1faff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-card h3 {
+      color: #0a2540;
+      margin-bottom: 0.8rem;
+    }
+
+    footer {
+      background: #0a2540;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Sign Up</h2>
-    <form id="signupForm">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" placeholder="Enter your name" required>
-      
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Enter your email" required>
-      
-      <label for="role">I am a:</label>
-      <select id="role" required>
-        <option value="">Select Role</option>
-        <option value="startup">Startup Founder</option>
-        <option value="investor">Investor</option>
-      </select>
-      
-      <label for="password">Password</label>
-      <input type="password" id="password" placeholder="Enter password" required>
-      
-      <button type="submit">Create Account</button>
-    </form>
-    <div class="message" id="message"></div>
-  </div>
+  <!-- Header -->
+  <header>
+    <h1>PitchNet</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Startups</a>
+      <a href="#">Investors</a>
+      <a href="#">Deals</a>
+      <a href="#">Login</a>
+    </nav>
+  </header>
 
-  <script>
-    const form = document.getElementById("signupForm");
-    const message = document.getElementById("message");
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Where Startups Meet Investors</h2>
+    <p>
+      PitchNet is the professional networking platform designed to connect
+      entrepreneurs with investors, create opportunities, and grow businesses.
+    </p>
+    <a href="#" class="btn">Get Started</a>
+  </section>
 
-    form.addEventListener("submit", function(e) {
-      e.preventDefault(); // stops page reload
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const role = document.getElementById("role").value;
-      const password = document.getElementById("password").value;
+  <!-- Features -->
+  <section class="features">
+    <div class="feature-card">
+      <h3>Startup Profiles</h3>
+      <p>Showcase your company, vision, and traction to attract investors.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Investor Profiles</h3>
+      <p>
+        Explore curated opportunities and connect with startups aligned with your
+        goals.
+      </p>
+    </div>
+    <div class="feature-card">
+      <h3>Deals Marketplace</h3>
+      <p>
+        Discover live investment opportunities and funding rounds in one place.
+      </p>
+    </div>
+    <div class="feature-card">
+      <h3>Networking Tools</h3>
+      <p>Build connections, share updates, and grow your professional network.</p>
+    </div>
+  </section>
 
-      // For now we just "simulate" signup
-      message.textContent = `Welcome, ${name}! You signed up as a ${role}.`;
-      form.reset();
-    });
-  </script>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 PitchNet. All rights reserved.</p>
+  </footer>
 </body>
 </html>
+
